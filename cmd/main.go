@@ -12,6 +12,7 @@ func main() {
 
 	var dataquery map[string]*string
 	dataquery = make(map[string]*string)
+
 	dataquery["acquirer"] = flag.String("a", "", "Aquarier Name eg, genova, getnet, etc")
 	dataquery["operation"] = flag.String("o", "", "Type of operation, eg authorization, online_purchase, capture ")
 	dataquery["status"] = flag.String("s", "", "Status of Operations, eg contingency, approved, rejected")
@@ -22,8 +23,6 @@ func main() {
 	dataquery["token"] = flag.String("token", "", "Fury token")
 	dataquery["optional"] = flag.String("op", "", "Optional values for add to query")
 	flag.Parse()
-	//fmt.Println(*dataquery["aquirer"])
-	cont := 0
 	query := ""
 
 	for i := range dataquery {
@@ -32,7 +31,6 @@ func main() {
 			if i == "token" {
 				continue
 			}
-			cont++
 			if len(query) > 0 && i != "optional" {
 				query += "&"
 			}

@@ -16,7 +16,7 @@ func main() {
 	dataquery["acquirer"] = flag.String("a", "", "Aquarier Name eg, genova, getnet, etc")
 	dataquery["operation"] = flag.String("o", "", "Type of operation, eg authorization, online_purchase, capture ")
 	dataquery["status"] = flag.String("s", "", "Status of Operations, eg contingency, approved, rejected")
-	dataquery["offset"] = flag.String("i", "0", "Offset, record number where you want to start")
+	dataquery["offset"] = flag.String("i", "0", "Offset, record number where you want to start the result")
 	dataquery["limit"] = flag.String("l", "30", "Limit, Max records that you want to show")
 	dataquery["created_date_from"] = flag.String("f", "1M", "Start time, eg 1m, 1d")     //from
 	dataquery["created_date_to"] = flag.String("t", "now", "End time, eg 1m, 1d or now") //to
